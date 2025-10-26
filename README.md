@@ -1,9 +1,4 @@
-## Examen 1: Programació de videojocs
+## Raycast
 
-### _Continguts:_
-
-- AudioManager
-- Spawner / Pools
-- Vectors
-- Raycast
-- SOLID (1 - 4)
+- Afegir un component collider a Target
+- Modificar Click: Button -> Add binding with one modifier -> El primer element left button -> El segon element position
