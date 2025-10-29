@@ -1,9 +1,3 @@
-## Examen 1: Programació de videojocs
+## s.o.L.i.d - Liskov Substitution Principle
 
-### _Continguts:_
-
-- AudioManager
-- Spawner / Pools
-- Vectors
-- Raycast
-- SOLID (1 - 4)
+- Si una classe base té certs comportaments i propietats, les seves subclasses han de ser capaces d'heretar i utilizar aquests comportaments
