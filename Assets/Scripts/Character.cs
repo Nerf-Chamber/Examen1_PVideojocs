@@ -1,17 +1,12 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(MoveBehaviour))]
-[RequireComponent(typeof(JumpBehaviour))]
-
-public class Character : MonoBehaviour
+public class Character : MonoBehaviour, IDamageable
 {
-    [SerializeField] protected MoveBehaviour _mb;
-    [SerializeField] protected JumpBehaviour _jb;
+    [SerializeField] protected int HP;
 
-    void Awake()
+    public void Hurt(int damage)
     {
-        _mb = GetComponent<MoveBehaviour>();
-        _jb = GetComponent<JumpBehaviour>();
+        Debug.Log("Me dolió, pero me duele más un México corrupto");
+        HP -= damage;
     }
 }
