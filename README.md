@@ -4,6 +4,7 @@
 
 - AudioManager
 - Spawner / Pools
-- Vectors
 - Raycast
 - SOLID (1 - 4)
+
+* Vectors dintre dels altres apartats
