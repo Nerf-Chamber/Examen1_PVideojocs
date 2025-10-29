@@ -1,37 +1,52 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Character
 {
-    [SerializeField] private Rigidbody2D _rb;
-    [SerializeField] private Vector2 actualPosition;
+    [SerializeField] private GameObject enemy;
+
+    private float speed = 3f;
+    private Vector2 _direction = new Vector2(1, 0);
 
     private bool _hasBounced = false;
 
-    public float _enemyLimitPositionXPositive = 10;
-    public float _enemyLimitPositionXNegative = -10;
-
-    public Spawner spawner;
-
-    void Start()
+    private void Start()
     {
-        _rb.linearVelocityX = 2f;
+        _mb.Move(_direction, speed);
+        // Codi una mica brut, però per veure la funció Invoke
+        // Es podria fer dintre d'un update xd
+        float random = Random.Range(1f, 3f);
+        Invoke("RandomJump", random);
     }
-
     private void Update()
     {
-        if (!_hasBounced && (_rb.position.x >= 10 || _rb.position.x <= -10))
+        Patrol();
+    }
+
+    private void Patrol()
+    {
+        float enemyPositionX = enemy.transform.position.x;
+        // Les condicions de límits no estan juntes en un OR per possibles comportaments de col·lisió amb Player
+        if (!_hasBounced && enemyPositionX >= 10)
         {
-            _rb.linearVelocityX *= -1;
-            _rb.transform.position = new Vector2(_rb.transform.position.x, _rb.transform.position.y - 1.5f);
+            _direction.x = -1f;
+            _mb.Move(_direction, speed);
             _hasBounced = true;
         }
-        if (_rb.position.x < 10 && _rb.position.x > -10)
+        else if (!_hasBounced && enemyPositionX <= -10)
+        {
+            _direction.x = 1f;
+            _mb.Move(_direction, speed);
+            _hasBounced = true;
+        }
+        else if (enemyPositionX < 10 && enemyPositionX > -10)
         {
             _hasBounced = false;
         }
-        if (_rb.position.y <= 0)
-        {
-            spawner.Push(gameObject);
-        }
+    }
+    private void RandomJump()
+    {
+        _jb.Jump(150f);
+        float random = Random.Range(1f, 3f);
+        Invoke("RandomJump", random);
     }
 }
