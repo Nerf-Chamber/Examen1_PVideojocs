@@ -1,10 +1,4 @@
-## Examen 1: Programació de videojocs
+## S.o.l.i.d - Single Responsibility Design Pattern
 
-### _Continguts:_
-
-- AudioManager
-- Spawner / Pools
-- Raycast
-- SOLID (1 - 4)
-
-* Vectors dintre dels altres apartats
+- Separar funcionalitats per reutilització i optimització
+- Recordar el NoFriction com aa PhysicsMaterial2D
