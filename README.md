@@ -1,9 +1,4 @@
-## Examen 1: Programació de videojocs
+## s.O.l.i.d - Open/Closed Design Pattern
 
-### _Continguts:_
-
-- AudioManager
-- Spawner / Pools
-- Vectors
-- Raycast
-- SOLID (1 - 4)
+- El codi hauria d'estar obert per extensió però no per modificació (closed for modification)
+- Apunt: Una col·lisió funciona si almenys un dels dos objectes que hi participen té RigidBody
