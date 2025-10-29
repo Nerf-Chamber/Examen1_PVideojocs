@@ -1,9 +1,4 @@
-## Examen 1: Programació de videojocs
+## s.o.l.I.d - Interface Segregation Principle
 
-### _Continguts:_
-
-- AudioManager
-- Spawner / Pools
-- Vectors
-- Raycast
-- SOLID (1 - 4)
+- Priorización de la creació de múltiples interfaces específiques, en lloc d'una única general. Arquitectura desacoplada.
+- Només hi ha l'estructura de classes, res visual ni interactiu
