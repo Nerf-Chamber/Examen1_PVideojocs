@@ -2,9 +2,8 @@
 
 ### _Continguts:_
 
+- Vectors
 - AudioManager
 - Spawner / Pools
 - Raycast
 - SOLID (1 - 4)
-
-*Vectors presents dintre dels altres apartats
