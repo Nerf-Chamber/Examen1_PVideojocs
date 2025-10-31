@@ -16,13 +16,13 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ChangeItem",
-                    "type": "Button",
-                    "id": "1fd981fb-6b59-4a71-95fa-58a1e749903c",
-                    "expectedControlType": "",
+                    "name": "ChangeMousePosition",
+                    "type": "Value",
+                    "id": "f0be5f64-8edb-4c19-bbef-0a8484629993",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -50,12 +50,12 @@
                 },
                 {
                     "name": "",
-                    "id": "4f912bdc-5ace-47b2-a78a-36c7e6fafc61",
-                    "path": "<Keyboard>/rightArrow",
+                    "id": "6b5b17bd-e112-4864-9575-ab6cb3985741",
+                    "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ChangeItem",
+                    "action": "ChangeMousePosition",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

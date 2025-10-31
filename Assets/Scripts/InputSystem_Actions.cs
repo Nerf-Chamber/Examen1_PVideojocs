@@ -102,13 +102,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""ChangeItem"",
-                    ""type"": ""Button"",
-                    ""id"": ""1fd981fb-6b59-4a71-95fa-58a1e749903c"",
-                    ""expectedControlType"": """",
+                    ""name"": ""ChangeMousePosition"",
+                    ""type"": ""Value"",
+                    ""id"": ""f0be5f64-8edb-4c19-bbef-0a8484629993"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -136,12 +136,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4f912bdc-5ace-47b2-a78a-36c7e6fafc61"",
-                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""id"": ""6b5b17bd-e112-4864-9575-ab6cb3985741"",
+                    ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ChangeItem"",
+                    ""action"": ""ChangeMousePosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -730,7 +730,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
-        m_Player_ChangeItem = m_Player.FindAction("ChangeItem", throwIfNotFound: true);
+        m_Player_ChangeMousePosition = m_Player.FindAction("ChangeMousePosition", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -825,7 +825,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Interact;
-    private readonly InputAction m_Player_ChangeItem;
+    private readonly InputAction m_Player_ChangeMousePosition;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -842,9 +842,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         /// <summary>
-        /// Provides access to the underlying input action "Player/ChangeItem".
+        /// Provides access to the underlying input action "Player/ChangeMousePosition".
         /// </summary>
-        public InputAction @ChangeItem => m_Wrapper.m_Player_ChangeItem;
+        public InputAction @ChangeMousePosition => m_Wrapper.m_Player_ChangeMousePosition;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -874,9 +874,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
-            @ChangeItem.started += instance.OnChangeItem;
-            @ChangeItem.performed += instance.OnChangeItem;
-            @ChangeItem.canceled += instance.OnChangeItem;
+            @ChangeMousePosition.started += instance.OnChangeMousePosition;
+            @ChangeMousePosition.performed += instance.OnChangeMousePosition;
+            @ChangeMousePosition.canceled += instance.OnChangeMousePosition;
         }
 
         /// <summary>
@@ -891,9 +891,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
-            @ChangeItem.started -= instance.OnChangeItem;
-            @ChangeItem.performed -= instance.OnChangeItem;
-            @ChangeItem.canceled -= instance.OnChangeItem;
+            @ChangeMousePosition.started -= instance.OnChangeMousePosition;
+            @ChangeMousePosition.performed -= instance.OnChangeMousePosition;
+            @ChangeMousePosition.canceled -= instance.OnChangeMousePosition;
         }
 
         /// <summary>
@@ -1202,12 +1202,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnInteract(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "ChangeItem" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "ChangeMousePosition" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnChangeItem(InputAction.CallbackContext context);
+        void OnChangeMousePosition(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
